@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Charging</title>
+    <style type="text/css">
+      body {
+        height: 100%;
+        color: #222;
+        margin: 0;
+        padding: 0;
+        overflow-y: scroll;
+      }
+      .elec-action {
+        display: flex;
+        align-items: center;
+      }
+      .elec {
+        position: relative;
+      }
+      .elec:hover .elec-status {
+        background-image: url(./charging_focus.gif);
+      }
+      .elec-trigger {
+        background: #f25d8e;
+        border-radius: 4px;
+        box-shadow: 0 4px 4px rgba(255, 112, 159, 0.3);
+        color: #fff;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 18px;
+        line-height: 50px;
+        padding: 0 24px;
+      }
+      .elec-trigger:hover {
+        background: #ff709f;
+      }
+      .elec-trigger:hover + .elec-map .elec-status-bg {
+        width: 156px;
+      }
+      .elec-trigger:hover + .elec-map .elec-status {
+        background-image: url(./charging_background.png);
+      }
+      .elec-trigger-icon {
+        background-position: -278px -918px;
+        width: 20px;
+        height: 24px;
+        vertical-align: middle;
+        margin-right: 12px;
+      }
+      .elec-map {
+        height: 74px;
+        padding-left: 24px;
+        position: relative;
+      }
+      .elec-status {
+        background-image: url(./charging_background.png);
+        color: #99a2aa;
+        font-weight: 700;
+        width: 96px;
+        padding: 0 30px;
+        height: 74px;
+        line-height: 74px;
+        text-align: right;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+      }
+      .elec-count {
+        color: #6d757a;
+        font-weight: 700;
+      }
+      .elec-status-bg {
+        background-image: url(./charging_hover.gif);
+        width: 0;
+        height: 74px;
+        position: absolute;
+        top: 0;
+        transition: width 0.4s ease;
+        z-index: 1;
+      }
+      .elec-status-bg-grey {
+        background: #e5e9ef;
+        width: 156px;
+        height: 74px;
+        position: absolute;
+        top: 0;
+        z-index: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="elec">
+      <div class="elec-action">
+        <div class="elec-trigger">
+          <span class="elec-trigger-icon icon"></span>
+          Hover to charge
+        </div>
+        <div class="elec-map">
+          <div class="elec-status">
+            <span class="elec-count">Charging</span>
+          </div>
+          <div class="elec-status-bg"></div>
+          <div class="elec-status-bg-grey"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
